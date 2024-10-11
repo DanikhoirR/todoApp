@@ -58,7 +58,7 @@ exports.updateTask = (req, res) => {
   if (!id || !task || !isComplete) {
     res.status(400).json({
       status: "error",
-      message: "Please provide id, name and iscomplete",
+      message: "Please provide id, task and iscomplete",
     });
   }
 
@@ -94,7 +94,7 @@ exports.deleteTask = (req, res) => {
 
   tasks.splice(index, 1);
 
-  res.status(200).json({
+  res.status(204).json({
     status: "success",
     message: "Delete Succes",
   });
